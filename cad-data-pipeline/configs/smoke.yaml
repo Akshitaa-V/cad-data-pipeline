@@ -1,0 +1,9 @@
+# Small build used by the tests and CI.
+out_dir: data_smoke
+seed: 7
+parts_per_family: 12
+n_points: 512
+voxel_resolution: 16
+duplicate_fraction: 0.1
+fault_fraction: 0.15
+workers: 2

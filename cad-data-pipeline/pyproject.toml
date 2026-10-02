@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cadpipe"
+version = "0.1.0"
+description = "CAD data pipeline: STEP/STL/OBJ parsers, B-Rep graphs, point clouds and validated ML datasets"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Akshitaa Vijayakumar" }]
+dependencies = ["numpy>=1.24", "pyyaml>=6"]
+
+[project.optional-dependencies]
+cad = ["cadquery>=2.4"]
+dev = ["pytest>=7", "ruff>=0.5"]
+
+[project.scripts]
+cadpipe = "cadpipe.cli:main"
+
+[tool.setuptools]
+packages = ["cadpipe"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "PIE"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
